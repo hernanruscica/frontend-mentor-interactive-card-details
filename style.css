@@ -1,0 +1,273 @@
+/************** CUSTOM VARIABLES ******************/
+
+
+
+/************** CUSTOM VARIABLES ******************/
+
+:root {
+    --error : hsl(0, 100%, 66%);
+    --active-input-grad: linear-gradient(hsl(249, 99%, 64%) , hsl(278, 94%, 30%));
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --fs-body: 18px;
+    --ff-body: 'Space Grotesk', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+/************** GENERAL SETTINGS ******************/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/************** GENERAL SETTINGS ******************/
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.credit-card {
+    background-color: var(--light-grayish-violet);
+    color: var(--light-grayish-violet);
+    font-family: var(--ff-body);    
+    width: 100vw;   
+    display: flex;    
+    flex-direction: column;
+    
+}
+
+.credit-card__preview {
+    background-color: var(--very-dark-violet);
+    height: 27vh;
+    position: relative;
+    z-index: 0;  
+
+}
+
+.credit-card__preview__rear {   
+    width: fit-content;    
+    position: absolute;
+    top: 12%;
+    right: 4%;
+    z-index: -1;
+    width: 300px;      
+    box-shadow:  8px 10px 44px -11px rgba(0,0,0,0.40);
+}
+
+.credit-card__preview__rear__cvc {
+    position: absolute;
+    top: 42%;
+    right: 14%;
+    font-size: 0.8em;
+}
+
+.credit-card__preview__front {
+    width: fit-content;    
+    position: absolute;
+    top: 54%;
+    left: 4%;
+    z-index: -1;
+    width: 300px;  
+    box-shadow:  8px 10px 44px -11px rgba(0,0,0,0.40);    
+}
+
+.credit-card__preview__front__content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 1.2em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    
+}
+
+.credit-card__preview__front__content__circles {
+    width: 55px;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;   
+    
+}
+
+.credit-card__preview__front__content__circles__logo {
+    width: 30px;
+    height: 30px;    
+    border-radius: 50%;
+    background-color: white;
+}
+
+.credit-card__preview__front__content__circles__logo2 {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: solid white 1px;
+}
+
+
+.credit-card__preview__front__content__number {    
+    font-size: 1.2em;
+    letter-spacing: .13em;
+    width: 100%;
+}
+
+.credit-card__preview__front__content__name-date {
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-between;    
+    font-size: 0.6em;
+    letter-spacing: 0.1em;
+}
+
+.credit-card__preview__front__content__name-date__name {
+    text-transform: uppercase;
+    
+    
+}
+
+.credit-card__data {
+    height: 100vh;
+    padding: 0 1em 1em 1em;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+}
+
+.form__input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;  
+    margin-top: 0.7em;  
+}
+
+.two-digits {
+    width: 45%;
+}
+.two-digits + .two-digits {
+    margin-left: 0.4em;
+}
+
+.form {
+    margin-top: 18vw;
+    padding: 0.5em 0.2;
+    max-width: 400px;
+}
+
+.form__input-container__label {
+    color: var(--very-dark-violet);
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 0.8em;
+    text-transform: uppercase;
+}
+
+.form__input-container__input {
+    padding: 1em 0.4em;
+    border-radius: 8px;
+    border: solid var(--light-grayish-violet) 2px;
+    background-color: var(--white);
+}
+
+.form__input-container__input::placeholder {
+    font-family: var(--ff-body);
+    font-size: 1.2em;
+    color: var(--light-grayish-violet);
+}
+
+.btn-confirn {
+    padding: 0.7em;
+    margin-top: 0.7em;
+    width: 100%;
+    font-family: var(--ff-body);    
+    font-size: 1.2em;
+    border-radius: 8px;
+    color: var(--white);
+    background-color: var(--very-dark-violet);
+    border: none;
+
+}
+
+
+@media (min-width: 1080px){
+    .credit-card {
+        flex-direction: row;
+        
+    }
+    .credit-card__preview {
+        width: 40vw;
+        height: 100vh;
+    }
+    .credit-card__data {
+        width: 60vw;
+        height: 100vh;
+    }
+
+    .credit-card__preview__front {
+        top: 23%;
+        left: 14vw;
+        width: 447px;
+    }
+
+    .credit-card__preview__front__content {
+        padding: 1.8em 1.4em;
+    }
+
+    .credit-card__preview__front__content__circles {
+        width: 80px;
+    }
+    .credit-card__preview__front__content__circles__logo {
+        height: 40px;
+        width: 40px;
+    }
+    .credit-card__preview__front__content__circles__logo2 {
+        height: 20px;
+        width: 20px;
+    }
+    .credit-card__preview__front__content__number {
+        font-size: 1.8em;
+    }
+    .credit-card__preview__front__content__name-date__name, 
+    .credit-card__preview__front__content__name-date__date{
+        font-size: 1.6em;
+    }
+    .credit-card__preview__rear__cvc {
+        top: 45%;
+        font-size: 1em;
+    }
+
+    .credit-card__preview__rear {
+        top: 57%;
+        left: 20vw;
+        width: 447px;
+    }
+
+    .form {
+        margin-left: 6em;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
