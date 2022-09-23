@@ -63,7 +63,9 @@ img {
     top: 12%;
     right: 4%;
     z-index: -1;
-    width: 300px;      
+    width: 300px;  
+    height: 164px;    
+    border-radius: 10px;    
     box-shadow:  8px 10px 44px -11px rgba(0,0,0,0.40);
 }
 
@@ -81,6 +83,8 @@ img {
     left: 4%;
     z-index: -1;
     width: 300px;  
+    height: 164px;    
+    border-radius: 10px;
     box-shadow:  8px 10px 44px -11px rgba(0,0,0,0.40);    
 }
 
@@ -147,8 +151,9 @@ img {
     background-color: var(--white);
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 4em;
 }
 
 .form__input-container {
@@ -171,7 +176,7 @@ img {
 }
 
 .form {
-    margin-top: 18vw;
+    /*margin-top: 18vw;*/
     padding: 0.5em 0.2;
     max-width: 400px;
 }
@@ -218,21 +223,25 @@ img {
     }
     .credit-card__preview {
         width: 40vw;
+        max-width: 600px;
         height: 100vh;
     }
     .credit-card__data {
         width: 60vw;
         height: 100vh;
+        align-items: center;
     }
 
     .credit-card__preview__front {
         top: 23%;
-        left: 14vw;
+        left: 14vw;        
         width: 447px;
+        height: 245px;              
     }
+    
 
     .credit-card__preview__front__content {
-        padding: 1.8em 1.4em;
+        padding: 1.8em 1.4em;        
     }
 
     .credit-card__preview__front__content__circles {
@@ -260,12 +269,13 @@ img {
 
     .credit-card__preview__rear {
         top: 57%;
-        left: 20vw;
+        left: 20vw; 
         width: 447px;
+        height: 245px;         
     }
 
     .form {
-        margin-left: 6em;
+        margin-left: 14em;
     }
 }
 
