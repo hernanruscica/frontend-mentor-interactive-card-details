@@ -54,7 +54,8 @@ img {
     height: 27vh;
     position: relative;
     z-index: 0;  
-
+    background: url('/images/bg-main-desktop.png');        
+    background-size: cover;
 }
 
 .credit-card__preview__rear {   
@@ -160,6 +161,7 @@ img {
     display: flex;
     flex-direction: column;
     margin: 1em;
+    height: 70px;
 }
 
 .input-row {
@@ -168,8 +170,16 @@ img {
     margin-top: 0.7em;  
 }
 
+.input-col {
+    width: 50%;    
+}
+
+#cvc-input-col {
+    margin-left: 0.5em;
+}
+
 .two-digits {
-    width: 45%;
+    width: 40%;
 }
 .two-digits + .two-digits {
     margin-left: 0.4em;
@@ -177,7 +187,7 @@ img {
 
 .form {
     /*margin-top: 18vw;*/
-    padding: 0.5em 0.2;
+    padding: 0.5em 0;
     max-width: 400px;
 }
 
@@ -190,17 +200,29 @@ img {
 }
 
 .form__input-container__input {
-    padding: 1em 0.4em;
+    padding: 0.4em 0.4em;
+    width: 100%;
     border-radius: 8px;
     border: solid var(--light-grayish-violet) 2px;
     background-color: var(--white);
+    font-size: 1em;
 }
 
 .form__input-container__input::placeholder {
     font-family: var(--ff-body);
-    font-size: 1.2em;
+    font-size: 1em;
     color: var(--light-grayish-violet);
 }
+
+.form__input-container__label-error {
+    color: var(--error);
+    font-size: 0.8em;
+}
+
+.hide {
+    display: none;
+}
+
 
 .btn-confirn {
     padding: 0.7em;
@@ -212,7 +234,11 @@ img {
     color: var(--white);
     background-color: var(--very-dark-violet);
     border: none;
+}
 
+.btn-confirn:hover {
+    cursor: pointer;
+    background-color: hsl(278, 66%, 22%);    
 }
 
 
@@ -225,6 +251,7 @@ img {
         width: 40vw;
         max-width: 600px;
         height: 100vh;
+        
     }
     .credit-card__data {
         width: 60vw;
