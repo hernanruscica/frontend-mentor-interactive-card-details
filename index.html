@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+ 
   <main class="credit-card">
     <section class="credit-card__preview">
       <div class="credit-card__preview__rear">
@@ -50,34 +50,31 @@
       <form action="" class="form">
         <div class="form__input-container">
           <label for="name" class="form__input-container__label">Cardholder Name</label>
-          <input type="text" id = "name" name = "name" 
+          <input type="text" maxlength="32" id = "name" name = "name" 
             class = "form__input-container__input"  placeholder="e.g. Jane Appleseed">  
-          <label for="" class="form__input-container__label-error">can't be blank</label>        
+          <label for="" class="form__input-container__label-error" id = "name-error">can't be blank</label>        
         </div>
         <div class="form__input-container">
-          <label for="number" class="form__input-container__label">Card Number</label>    
-          <!--
-            <input type="text" id="campo" name="campo" pattern="^[A-Za-z]+$" maxlength="35" required />
-          -->                   
-          <input type="text" id = "number" name = "number" pattern="[0-9]" required
+          <label for="number" class="form__input-container__label">Card Number</label>                              
+          <input type="text" maxlength="16" id = "number" name = "number" 
             class = "form__input-container__input" placeholder="e.g. 1234 5678 9123 0000"  >                   
-          <label for="" class="form__input-container__label-error">Wrong format, numbers only</label>
+          <label for="" class="form__input-container__label-error" id = "number-error">Wrong format, numbers only</label>
         </div>
         <div class="form__input-container input-row">          
             <div class="input-col">
                 <label for="exp-date-month-input" class="form__input-container__label">Exp. Date (MM/YY)</label>                                 
                 <div class="input-row">
-                  <input type="number" id = "exp-date-month-input" name = "exp-date-month" 
+                  <input type="text" maxlength="2" id = "exp-date-month-input" name = "exp-date-month" 
                     class = "form__input-container__input two-digits" placeholder="MM">
-                  <input type="number" id = "exp-date-year-input" name = "exp-date-year" 
+                  <input type="text" maxlength="2"  id = "exp-date-year-input" name = "exp-date-year" 
                     class = "form__input-container__input two-digits" placeholder="YY">                  
                 </div>
-                <label for="" class="form__input-container__label-error">can't be blank</label>
+                <label for="" class="form__input-container__label-error" id = "date-error">can't be blank</label>
             </div>
             <div class="input-col" id = "cvc-input-col">
               <label for="cvc" class="form__input-container__label" >CVC</label>    
               <div class="input-row">
-                <input type="number" id = "cvc-input" name = "exp-date-month" 
+                <input type="text" maxlength="3"  id = "cvc-input" name = "exp-date-month" 
                   class = "form__input-container__input" placeholder="e.g. 123">              
               </div> 
               <label for="" class="form__input-container__label-error">can't be blank</label>

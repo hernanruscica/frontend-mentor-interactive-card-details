@@ -14,7 +14,7 @@
     --fs-body: 18px;
     --ff-body: 'Space Grotesk', sans-serif;
 }
-
+ 
 body {
     display: flex;
     flex-direction: column;
@@ -217,10 +217,11 @@ img {
 .form__input-container__label-error {
     color: var(--error);
     font-size: 0.8em;
+    display: none;
 }
 
-.hide {
-    display: none;
+.show {
+    display: block;
 }
 
 
