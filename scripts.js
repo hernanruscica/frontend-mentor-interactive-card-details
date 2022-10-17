@@ -18,8 +18,10 @@ const $cardDateYearLabel = $d.getElementById("dateYearLabel");
 
 const $cardCvcInput = $d.getElementById("cvc-input");
 const $cardCvcLabel = $d.getElementById("cvcLabel");
+const $cardCvcError = $d.getElementById("cvc-error");
 
 const $btnConfirm = $d.getElementById("btn-confirm");
+const $formCardData = $d.getElementById("card-data-form");
 
 let cardholderNameValue, cardNumberValue, dateMonthValue, dateYearValue, cardCvcValue;
 
@@ -54,35 +56,61 @@ $d.addEventListener('keyup', (e) => {
 $btnConfirm.addEventListener('click', (e) => {
     e.preventDefault();
 
-    cardName = $cardholderNameInput.value;
-    cardNumber = $cardNumberInput.value;
-    cardMonth = $cardDateMonthInput.value;
-    cardYear = $cardDateYearInput.value;
+    let cardName = $cardholderNameInput.value,
+    cardNumber = $cardNumberInput.value,
+    cardMonth = $cardDateMonthInput.value,
+    cardYear = $cardDateYearInput.value,
     cardCVC = $cardCvcInput.value;
+    let validaciones = {"cardName" : false, "cardNumber" : false, "cardDate" : false, "cardCVC" : false}
+
+    const successHTML = 
+    `<div class = "form-success">
+        <i class="form-success__circle-ok fa-solid fa-check"></i>  
+        <h2 class=" form-success__title">THANK YOU!</h2>         
+        <h3 class=" form-success__subtitle">We've added your card details</h3>     
+        <button class="btn-confirn" id="btn-confirm">Continue</button>  
+    </div>`; 
+    
 
     /*Card Name validation and error messaging  */
     if (cardName == ""){
-        $cardHolderNameError.classList.add("show");
+        $cardHolderNameError.classList.add("show");        
     }else {
         $cardHolderNameError.classList.remove("show");
+        validaciones["cardName"] = true;
     }
 
     /*Card number validation and error messaging  */
     if (cardNumber == "" || !/^[0-9]{16}$/.test(cardNumber)){
-        $cardNumberError.classList.add("show");
+        $cardNumberError.classList.add("show");        
     }else {
         $cardNumberError.classList.remove("show");
+        validaciones["cardNumber"] = true;
     }
     
     /*Month and Year date validation and error messaging  */
     if (cardMonth == "" || cardYear == "" || !/^[0-9]{2}$/.test(cardMonth) ||  !/^[0-9]{2}$/.test(cardYear) ){
-        $cardDateError.classList.add("show");
+        $cardDateError.classList.add("show");        
     }else{
         $cardDateError.classList.remove("show");
+        validaciones["cardDate"] = true;
     }
 
     /*CVC validation and error messaging  */
+    if (cardCVC == "" ||  !/^[0-9]{3}$/.test(cardCVC)){
+        $cardCvcError.classList.add("show");        
+    }else{
+        $cardCvcError.classList.remove("show");
+        validaciones["cardCvc"] = true;
+    }
 
+    if (validaciones["cardName"] && validaciones["cardNumber"] && validaciones["cardDate"] && validaciones["cardCvc"] ){
+        console.log("Everything is Ok !");
+        $formCardData.innerHTML = "";
+        $formCardData.innerHTML += successHTML; 
+    }else{
+        console.log("something is wrong...")
+    }
+    /*Faltaria hacer que cuando este todo bien, borre el innerhtml de $formCardData y que ponga el mensaje de exito  sf 4700l*/
 } )
 
-/*console.log(!/^[0-9]{0,16}$/.test("34"));*/

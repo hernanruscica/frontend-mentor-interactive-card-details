@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,8 +47,9 @@
         </div>
       </div>
     </section>
-    <section class="credit-card__data">
-      <form action="" class="form">
+    <section class="credit-card__data">      
+      <form action="" class="form" id = "card-data-form">
+        <!-- --> 
         <div class="form__input-container">
           <label for="name" class="form__input-container__label">Cardholder Name</label>
           <input type="text" maxlength="32" id = "name" name = "name" 
@@ -77,12 +79,14 @@
                 <input type="text" maxlength="3"  id = "cvc-input" name = "exp-date-month" 
                   class = "form__input-container__input" placeholder="e.g. 123">              
               </div> 
-              <label for="" class="form__input-container__label-error">can't be blank</label>
+              <label for="" class="form__input-container__label-error" id = "cvc-error">can't be blank</label>
           </div>
         </div> 
         <div class="form__input-container">
             <button class="btn-confirn" id="btn-confirm">Confirm</button>
-        </div>       
+        </div>  
+          
+        
       </form>
     </section>
   </main>
